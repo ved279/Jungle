@@ -51,7 +51,12 @@ header{
 
 
 
-
+main{
+  height: 100vh;
+  padding: 60px;
+  margin: 20px;
+  width: 100%;
+}
 
 .img-slider{
     position: relative;
@@ -107,4 +112,19 @@ section{
 .acricle{
     padding: 30px;
     margin: 10px;
+}
+h2{
+  color:#359381;
+  font-size: 42px;
+}
+h3{
+  color: #359381;
+  font-size: 36px;
+}
+p{
+  font-size: 24px;
+}
+li{
+  font-size: 24px;
+  color: ;
 }
