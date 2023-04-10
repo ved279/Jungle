@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jungle</title>
+    <link rel="stylesheet" href="causes.css">
+</head>
+<body>
+    <header>
+        <h2 class="logo">Environment Pollution</h2>
+        <nav class="navigation">
+            <a href="index.html" class="active">Home</a>
+            <a href="#">Media</a>
+            <a href="/causes.html">Causes</a>
+            <a href="faqs.html">FAQs</a>
+        </nav>
+    </header>
+        <section class="slides">
+            <div class="img-slider">
+                <div class="slide active">
+                    <img src="https://wallpaperaccess.com/full/1591914.jpg" alt="">
+                    
+                </div>
+                <div class="slide">
+                    <img src="https://wallpaperaccess.com/full/2133933.jpg" alt="">
+                
+                </div>
+                <div class="slide">
+                    <img src="https://cdn.pixabay.com/photo/2020/02/17/06/00/pollution-4855507_960_720.jpg" alt="">
+                    
+                </div>
+                <div class="navigation">
+                    <div class="btn active"></div>
+                    <div class="btn"></div>
+                    <div class="btn"></div>
+                </div>
+            </div>
+        </section>
+        <section class="article">
+            <h2>Understanding the Causes and Preventions of Environmental Pollution</h2>
+            <p class="info">Environmental pollution is a global issue that affects the health and well-being of our planet and its inhabitants. It is caused by various human activities that release harmful substances into the environment, leading to adverse effects on air, water, soil, and biodiversity. Understanding the causes of environmental pollution is crucial in order to implement effective preventive measures and protect our environment for future generations.</p>
+            <h3>Causes of Environmental Pollution:</h3>
+            <ol>
+                <li>Industrial Activities: Industries emit large amounts of pollutants such as toxic gases, chemicals, and particulate matter into the air and water. These pollutants can cause air pollution, water pollution, and soil contamination, leading to detrimental effects on human health and ecosystems.</li>
+                <li>Transportation: The burning of fossil fuels in vehicles releases harmful emissions, including carbon monoxide, nitrogen oxides, and particulate matter, which contribute to air pollution. Additionally, oil spills from transportation accidents can result in water pollution and damage marine ecosystems.</li>
+                <li>Agricultural Practices: The use of chemical fertilizers, pesticides, and herbicides in agriculture can contaminate soil, water, and air, leading to environmental pollution. Runoff from agricultural fields can also carry excess nutrients into rivers and oceans, causing water pollution and eutrophication.</li>
+                <li>Improper Waste Disposal: Improper disposal of solid waste, including plastics, electronic waste, and hazardous materials, can contaminate soil, water, and air. Landfills and incinerators can release toxic gases and leachate that pollute the environment.</li>
+                <li>Deforestation: Deforestation, the clearing of forests for agriculture, logging, and infrastructure development, disrupts ecosystems and releases carbon dioxide into the atmosphere, contributing to air pollution and climate change. Deforestation also leads to loss of habitat for many species, causing biodiversity loss.</li>
+            </ol>
+            <h3>Preventions of Environmental Pollution:</h3>
+                <ol>
+                    <li>Reduce, Reuse, and Recycle: Adopting the 3Rs - reduce, reuse, and recycle - can significantly reduce waste generation and minimize the environmental impact of waste disposal. Use eco-friendly products and materials that are biodegradable or recyclable whenever possible.</li>
+                    <li>Switch to Renewable Energy: Transitioning to renewable energy sources, such as solar, wind, and hydroelectric power, can reduce greenhouse gas emissions and air pollution associated with burning fossil fuels.</li>
+                    <li>Practice Sustainable Agriculture: Use organic and sustainable farming practices that minimize the use of chemical fertilizers, pesticides, and herbicides, and promote biodiversity conservation.</li>
+                    <li>Promote Green Transportation: Opt for public transportation, carpooling, biking, or walking whenever possible to reduce emissions from fossil fuel-powered vehicles. Use fuel-efficient vehicles or switch to electric or hybrid vehicles.</li>
+                    <li>Implement Proper Waste Management: Follow proper waste disposal practices, including recycling, composting, and hazardous waste disposal, to prevent pollution of soil, water, and air. Support initiatives for waste reduction and recycling in your community.</li>
+                    <li>Conserve Resources: Conserve water, energy, and other natural resources by practicing water-saving techniques, turning off lights and appliances when not in use, and reducing consumption of non-renewable resources.</li>
+                    <li>Support Conservation Efforts: Advocate for policies and regulations that promote environmental protection, such as stricter emissions controls, waste management regulations, and conservation measures. Support organizations working towards environmental conservation and sustainability.</li>
+                </ol>
+                <p class="info">In conclusion, environmental pollution is a pressing issue that requires collective efforts to mitigate its causes and prevent its harmful effects. By understanding the causes of environmental pollution and adopting preventive measures in our daily lives, we can contribute to a healthier and more sustainable environment for ourselves and future generations. Let's take action now to protect our planet and preserve it for the generations to come. Together, we can make a difference!</p>
+        </section>
+
+        <script type="text/javascript">
+            var slides = document.querySelectorAll('.slide');
+            var btns = document.querySelectorAll('.btn');
+            let currentSlide = 1;
+        
+            // javascript for image slidersmanhual navigation 
+            var manualNav = function(manual){
+                slides.forEach((slide) => {
+                slide.classList.remove('active');
+                    btns.forEach((btn) =>{
+                        btn.classList.remove('active');
+                    });
+            });
+                slides[manual].classList.add('active');
+                btns[manual].classList.add('active');
+            }
+        
+            btns.forEach((btn,i) =>{
+                btn.addEventListener("click",() =>{
+                    manualNav(i);
+                    currentSlide = i; 
+                })
+            });
+        
+            // for image
+            var repeat = function(activeClass){
+                let active = document.getElementsByClassName('active');
+                let i = 1;
+        
+                var repeater = () => {
+                    setTimeout(function(){
+                        [...active].forEach((activeSlides) =>{
+                            activeSlides.classList.remove('active');
+                        });
+        
+                        slides[i].classList.add('active');
+                        btns[i].classList.add('active');
+                        i++;
+        
+                        if (slides.length ==i){
+                            i = 0;
+                        }
+                        if(i >= slides.length ==i){
+                            return;
+                        }
+                        repeater();
+                    },10000);
+                }
+                repeater();
+            }
+            repeat();
+        </script>
+    
+</body>
+</html>
